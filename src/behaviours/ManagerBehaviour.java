@@ -70,7 +70,7 @@ public class ManagerBehaviour extends Behaviour {
 						ACLMessage reply = new ACLMessage(ACLMessage.INFORM);
 						reply.addReceiver(new AID("PsycometricService", jade.core.AID.ISLOCALNAME));
 						reply.setInReplyTo(this.uuid);
-						reply.setContent(r1 + "/n" + r2);
+						reply.setContent("Psycometric condition:\n" + r1 + "\n\nClosest Hospital:\n" + r2 + "\n");
 						myAgent.send(reply);
 						done();
 					}

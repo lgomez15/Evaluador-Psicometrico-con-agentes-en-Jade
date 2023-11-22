@@ -62,6 +62,11 @@ public class PsycometricServiceBehaviour extends CyclicBehaviour {
 				this.requests.remove(uuid);
 
 				//set manager to available
+				String managerName = msg.getSender().getLocalName();
+				int managerNumber = Integer.parseInt(managerName.substring(managerName.length()-1));
+				managers[managerNumber] = managerNumber;
+
+
 
 			}
 		}

@@ -31,7 +31,7 @@ public class ClientBehaviour extends CyclicBehaviour{
 		ACLMessage msg = myAgent.receive();
 		if(msg != null)
 		{
-			System.out.println("Agent: " + myAgent.getLocalName() + "\n received: " + msg.getContent() + " \nfrom: " + msg.getSender().getLocalName());
+			System.out.println(msg.getContent());
 			this.step = 0;
 		}
 		else
@@ -56,8 +56,6 @@ public class ClientBehaviour extends CyclicBehaviour{
 			}
 			msg.setContent(request);
 			myAgent.send(msg);
-			
-			System.out.println("Agent" + myAgent.getLocalName() + " sent: " + msg.getContent() + " to " + receivers[0].getLocalName());
 			this.step = 1;
 		}
 		else
@@ -94,13 +92,13 @@ public class ClientBehaviour extends CyclicBehaviour{
 
 	public int survey ()
 	{
-		System.out.println("The aim of this psychometric evaluation program is to provide a comprehensive insight into the emotional and psychological state of affected individuals, enabling mental health professionals and aid teams to focus their efforts more effectively and in a personalized manner.");
-		System.out.println("Please answer the following questions with the most accurate answer possible.");
+		System.out.println("\nWelcome to the Pyscometric Service!\nThe aim of this psychometric evaluation program is to provide a comprehensive insight into the emotional and psychological state of affected individuals, enabling mental health professionals and aid teams to focus their efforts more effectively and in a personalized manner.");
+		System.out.println("Please answer the following questions with the most accurate answer possible.\n");
 		//adress from the patient info:
 		System.out.println("Please enter your adress:");
 		adress = System.console().readLine();
 		//10 questions for the psychometric evaluation after an earthquake.
-		System.out.println("1. Do you feel nervous, anxious or on edge?");
+		System.out.println("\n1. Do you feel nervous, anxious or on edge?");
 		psycometrics += controlAnswers();
 		System.out.println("2. Do you feel that you are unable to stop or control worrying?");
 		psycometrics += controlAnswers();
@@ -120,7 +118,7 @@ public class ClientBehaviour extends CyclicBehaviour{
 		psycometrics += controlAnswers();
 		System.out.println("10. Do you feel that you are trapped or caught?");
 		psycometrics += controlAnswers();
-		System.out.println("Thank you for your time.");
+		System.out.println("\nThank you for your time.\n");
 		return psycometrics;
 	}
 

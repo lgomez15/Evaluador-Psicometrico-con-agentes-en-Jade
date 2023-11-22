@@ -29,15 +29,15 @@ public class PsycometricAgentBehaviour extends OneShotBehaviour {
 	public String evaluateSituation(int psycometrics)
 	{
 		String response = "";
-		if(psycometrics < 5)
+		if(psycometrics > 5)
 		{
 			response = "You are not in a good state of mind, you should seek help.";
 		}
-		else if(psycometrics >= 5 && psycometrics < 7)
+		else if(psycometrics <= 5 && psycometrics < 7)
 		{
 			response = "You are in a good state of mind, but you should still seek help.";
 		}
-		else if(psycometrics >= 7)
+		else if(psycometrics <= 7)
 		{
 			response = "You are in a good state of mind, you don't need help.";
 		}
